@@ -183,14 +183,25 @@
     // </script>
     //
     <script> < !--背景向左滚动-->
-var i = 0;
-        setInterval(() => {
+    var i = 0;
+        function move(ele, target) {
             i--;
-            document.getElementById('0').style.left = i + 'px';
-            document.getElementById('1').style.left = i + 'px';
-            document.getElementById('2').style.left = i + 'px';
-            document.getElementById('3').style.left = i + 'px';
-        }, 50)
+            let t = setInterval(function () {
+                ele.style.left = i + 'px';
+            }, 50
+            )
+        }
+        move(document.getElementById('0'), i)
+        move(document.getElementById('0'), i)
+        move(document.getElementById('0'), i)
+        move(document.getElementById('0'), i)
+        // setInterval(() => {
+        //     i--;
+        //     document.getElementById('0').style.left = i + 'px';
+        //     document.getElementById('1').style.left = i + 'px';
+        //     document.getElementById('2').style.left = i + 'px';
+        //     document.getElementById('3').style.left = i + 'px';
+        // }, 50)
     </script>
 </body>
 
