@@ -184,17 +184,26 @@
 
     <script>
         var i = 0;
-        function move() {
+        setInterval(function () {
             i--;
-            let t = setInterval(function () {
             document.getElementById('0').style.left = i + 'px';
             document.getElementById('1').style.left = i + 'px';
             document.getElementById('2').style.left = i + 'px';
             document.getElementById('3').style.left = i + 'px';
             }, 50
             )
-        }
-        move()
+        // function move() {
+        //     i--;
+        //     let t = setInterval(function () {
+        //     i--;
+        //     document.getElementById('0').style.left = i + 'px';
+        //     document.getElementById('1').style.left = i + 'px';
+        //     document.getElementById('2').style.left = i + 'px';
+        //     document.getElementById('3').style.left = i + 'px';
+        //     }, 50
+        //     )
+        // }
+        // move()
 
         // setInterval(() => {
         //     i--;
