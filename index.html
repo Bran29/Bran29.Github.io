@@ -149,9 +149,13 @@
         let dateLine = document.querySelector("#lineCodeHeight > div.pt44 > ul > li > div.h60.br > div:nth-child(2)")
         let today = time().split(' ')[0]
         let tomorroww = tomorrow().split(' ')[0]
+        if (tomorrow>30)
+        {
+            tomorrow=tomorrow+1;
+        }
         let yesterdayy = yesterday().split(' ')[0]
         // if (date.getHours() > 11 ) {
-        dateLine.innerHTML = yesterdayy + " 11:37 至 " + tomorroww + " 23:57"
+        dateLine.innerHTML = yesterdayy + " 11:37 至 " + today + " 23:57"
         // } else { dateLine.innerHTML = yesterdayy + " 08:30 至 " + today + " 03:30" }
 
         //生成背景
