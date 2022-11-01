@@ -143,17 +143,14 @@
             return year + "-" + month + "-" + (day + 1) + " " + hh + ":" + mm + ":" + ss;
         }
         var yesterday = function () {
-            return year + "-" + month + "-" + (day - 1) + " " + hh + ":" + mm + ":" + ss;
+            return year + "-" + month + "-" + (day) + " " + hh + ":" + mm + ":" + ss;
         }
 
         let dateLine = document.querySelector("#lineCodeHeight > div.pt44 > ul > li > div.h60.br > div:nth-child(2)")
         let today = time().split(' ')[0]
         let tomorroww = tomorrow().split(' ')[0]
         let yesterdayy = yesterday().split(' ')[0]
-        if (yesterdayy==0)
-        {
-            yesterdayy=30;
-        }
+
        
         // if (date.getHours() > 11 ) {
         dateLine.innerHTML = yesterdayy + " 11:37 至 " + today + " 23:57"
