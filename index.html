@@ -262,13 +262,15 @@
 
         document.getElementById('4').style.background = "url(" + b.toDataURL("image/png") + ") left top repeat";
 
+        document.getElementById('5').style.background = "url(" + b.toDataURL("image/png") + ") left top repeat";
+
 
         let t = document.getElementsByClassName('title h60')[0];
         t.classList.replace('red', 'green');
         t.getElementsByTagName('span')[0].innerText = '可通行';
 
         let t_time = document.getElementsByClassName('h60 br')[0];
-        t.getElementsByTagName('div')[0].innerText= a + " 09:00 至 " + a + " 23:59";
+        t_time.getElementsByTagName('div')[0].innerText= a + " 09:00 至 " + a + " 23:59";
 
         let tt = document.getElementsByClassName('wp100')[1].getElementsByTagName('li');
         console.log(tt);
