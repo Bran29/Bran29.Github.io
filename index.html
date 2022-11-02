@@ -150,6 +150,12 @@
         var year = date.getFullYear();
         var month = (date.getMonth() + 1) < 10 ? "0" + (date.getMonth() + 1) : (date.getMonth() + 1);
         var day = date.getDate() < 10 ? "0" + date.getDate() : date.getDate();
+
+        var day_sub_1 = date.getDate()-1 < 10 ? "0" + (date.getDate()-1) : (date.getDate()-1);
+        var day_sub_2 = date.getDate()-2 < 10 ? "0" + (date.getDate()-2) : (date.getDate()-2);
+        var day_sub_3 = date.getDate()-3 < 10 ? "0" + (date.getDate()-3) : (date.getDate()-3);
+
+        var day_add_1 = date.getDate()+1 < 10 ? "0" + (date.getDate()+1) : (date.getDate()+1);
         var hh = date.getHours() < 10 ? "0" + date.getHours() : date.getHours();
         var mm = date.getMinutes() < 10 ? "0" + date.getMinutes() : date.getMinutes();
         var ss = date.getSeconds() < 10 ? "0" + date.getSeconds() : date.getSeconds();
@@ -164,7 +170,7 @@
             }
             else
             {
-                return year + "-" + (month) + "-" + (day+1) + " " + hh + ":" + mm + ":" + ss;
+                return year + "-" + (month) + "-" + day_add_1 + " " + hh + ":" + mm + ":" + ss;
             }
         }
         var yesterday = function () {
@@ -174,7 +180,7 @@
             }
             else
             {
-                return year + "-" + (month) + "-" + (day-1) + " " + hh + ":" + mm + ":" + ss;
+                return year + "-" + (month) + "-" + day_sub_1 + " " + hh + ":" + mm + ":" + ss;
             }
             
         }
@@ -198,7 +204,7 @@
             }
             else
             {
-                return year + "-" + (month) + "-" + (day-2) + " " + hh + ":" + mm + ":" + ss;
+                return year + "-" + (month) + "-" + day_sub_2 + " " + hh + ":" + mm + ":" + ss;
             }
         }
 
@@ -209,7 +215,7 @@
             }
             else
             {
-                return year + "-" + (month) + "-" + (day-3) + " " + hh + ":" + mm + ":" + ss;
+                return year + "-" + (month) + "-" + day_sub_3+ " " + hh + ":" + mm + ":" + ss;
             }
             
         }
@@ -276,7 +282,7 @@
         t_time.getElementsByTagName('div')[1].innerText= yesterdayy + " 11:37 至 " + tomorroww + " 23:57";
 
         let t_time2 = document.getElementsByClassName('h60 br')[1];
-        t_time2.getElementsByTagName('div')[1].innerText= yesterdayy_2nd + " 11:37 至 " + tomorroww_2nd + " 23:57";
+        t_time2.getElementsByTagName('div')[1].innerText= yesterdayy_2nd + " 08:30 至 " + tomorroww_2nd + " 12:00";
 
         let tt = document.getElementsByClassName('wp100')[1].getElementsByTagName('li');
         console.log(tt);
