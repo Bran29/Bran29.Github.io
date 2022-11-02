@@ -123,6 +123,24 @@
                         style="pointer-events: none; top: 5px; left: -305px; position: absolute; z-index: 100000; width: 1e+07px; height: 622px; background: url() left top repeat;">
                     </div>
                 </li>
+
+                <li data-v-69238719=""
+                class="bg-white bdr-p5 h120 relative mb10 pos-rel hidden numberClass watermark0">
+                <div data-v-69238719="" class="radio1"></div>
+                <div data-v-69238719="" class="radio2"></div>
+                <div data-v-69238719="" class="title h60 flex justify-center align-center fz23 red"><span
+                        data-v-69238719="">已过期</span></div>
+                <div data-v-69238719="" class="h60 br">
+                    <div data-v-69238719="" class="flex justify-center align-center mt5">有效期</div>
+                    <div data-v-69238719="" class="flex justify-center align-center mt5">
+                        2022-09-23 09:30 至 2022-09-24 23:30
+                    </div>
+                </div>
+                <div id="5"
+                    style="pointer-events: none; top: 5px; left: -305px; position: absolute; z-index: 100000; width: 1e+07px; height: 622px; background: url() left top repeat;">
+                </div>
+            </li>
+
                 </ul>
             </div>
         </div>
@@ -140,12 +158,28 @@
             return year + "-" + month + "-" + day + " " + hh + ":" + mm + ":" + ss;
         }
         var tomorrow = function () {
-            return year + "-" + month + "-" + (day + 1) + " " + hh + ":" + mm + ":" + ss;
+            if (day==30)
+            {
+                return year + "-" + (month+1) + "-" + (1) + " " + hh + ":" + mm + ":" + ss;
+            }
+            else
+            {
+                return year + "-" + (month) + "-" + (day+1) + " " + hh + ":" + mm + ":" + ss;
+            }
         }
         var yesterday = function () {
-            return year + "-" + month + "-" + (day) + " " + hh + ":" + mm + ":" + ss;
+            if (day==1)
+            {
+                return year + "-" + (month-1) + "-" + (30) + " " + hh + ":" + mm + ":" + ss;
+            }
+            else
+            {
+                return year + "-" + (month) + "-" + (day-1) + " " + hh + ":" + mm + ":" + ss;
+            }
+            
         }
 
+        // 可通行改日期
         let dateLine = document.querySelector("#lineCodeHeight > div.pt44 > ul > li > div.h60.br > div:nth-child(2)")
         let today = time().split(' ')[0]
         let tomorroww = tomorrow().split(' ')[0]
@@ -153,8 +187,42 @@
 
        
         // if (date.getHours() > 11 ) {
-        dateLine.innerHTML = yesterdayy + " 11:37 至 " + today + " 23:57"
+        dateLine.innerHTML = yesterdayy + " 11:37 至 " + tomorroww + " 23:57"
         // } else { dateLine.innerHTML = yesterdayy + " 08:30 至 " + today + " 03:30" }
+        
+        // 第二行更改日期
+        var tomorrow_2nd = function () {
+            if (day-2<1)
+            {
+                return year + "-" + (month-1) + "-" + (29) + " " + hh + ":" + mm + ":" + ss;
+            }
+            else
+            {
+                return year + "-" + (month) + "-" + (day-2) + " " + hh + ":" + mm + ":" + ss;
+            }
+        }
+
+        var yesterday_2nd = function () {
+            if (day-3<1)
+            {
+                return year + "-" + (month-1) + "-" + (28) + " " + hh + ":" + mm + ":" + ss;
+            }
+            else
+            {
+                return year + "-" + (month) + "-" + (day-3) + " " + hh + ":" + mm + ":" + ss;
+            }
+            
+        }
+
+        // let dateLine = document.querySelector("#lineCodeHeight > div.pt44 > ul > li > div.h60.br > div:nth-child(2)")
+        // let today = time().split(' ')[0]
+        // let tomorroww = tomorrow().split(' ')[0]
+        // let yesterdayy = yesterday().split(' ')[0]
+
+       
+
+        dateLine.innerHTML = yesterdayy + " 11:37 至 " + tomorroww + " 23:57"
+
 
         //生成背景
         let a = today
@@ -199,6 +267,10 @@
         t.classList.replace('red', 'green');
         t.getElementsByTagName('span')[0].innerText = '可通行';
         t.nextSibling.lastChild.innerText = a + " 09:00 至 " + a + " 23:59";
+
+        let t2 = document.getElementsByClassName('title h60')[1];
+        t2.nextSibling.lastChild.innerHTML = a + " 09:00 至 " + a + " 23:59";
+
         let tt = document.getElementsByClassName('wp100')[1].getElementsByTagName('li');
         console.log(tt);
         tt[tt.length - 1].style.display = 'none'
@@ -214,6 +286,7 @@
             document.getElementById('2').style.left = i + 'px';
             document.getElementById('3').style.left = i + 'px';
             document.getElementById('4').style.left = i + 'px';
+            document.getElementById('5').style.left = i + 'px';
             }, 50
             )
         // function move() {
