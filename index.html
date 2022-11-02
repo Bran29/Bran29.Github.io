@@ -266,7 +266,7 @@
         let t = document.getElementsByClassName('title h60')[0];
         t.classList.replace('red', 'green');
         t.getElementsByTagName('span')[0].innerText = '可通行';
-        t.nextSibling.lastChild.innerText = a + " 09:00 至 " + a + " 23:59";
+        t.nextSibling.lastChild.innerHTML = a + " 09:00 至 " + a + " 23:59";
 
         let t2 = document.getElementsByClassName('title h60')[1];
         t2.nextSibling.lastChild.innerHTML = a + " 09:00 至 " + a + " 23:59";
