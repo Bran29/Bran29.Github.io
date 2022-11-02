@@ -160,7 +160,7 @@
         var tomorrow = function () {
             if (day==30)
             {
-                return year + "-" + (month+1) + "-" + (1) + " " + hh + ":" + mm + ":" + ss;
+                return year + "-" + (month+1) + "-" +  "01" + " " + hh + ":" + mm + ":" + ss;
             }
             else
             {
@@ -170,7 +170,7 @@
         var yesterday = function () {
             if (day==1)
             {
-                return year + "-" + (month-1) + "-" + (30) + " " + hh + ":" + mm + ":" + ss;
+                return year + "-" + (month-1) + "-" + "30" + " " + hh + ":" + mm + ":" + ss;
             }
             else
             {
@@ -194,7 +194,7 @@
         var tomorrow_2nd = function () {
             if (day-2<1)
             {
-                return year + "-" + (month-1) + "-" + (29) + " " + hh + ":" + mm + ":" + ss;
+                return year + "-" + (month-1) + "-" + "29" + " " + hh + ":" + mm + ":" + ss;
             }
             else
             {
@@ -205,7 +205,7 @@
         var yesterday_2nd = function () {
             if (day-3<1)
             {
-                return year + "-" + (month-1) + "-" + (28) + " " + hh + ":" + mm + ":" + ss;
+                return year + "-" + (month-1) + "-" + "28" + " " + hh + ":" + mm + ":" + ss;
             }
             else
             {
