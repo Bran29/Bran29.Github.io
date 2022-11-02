@@ -180,14 +180,14 @@
         }
 
         // 可通行改日期
-        let dateLine = document.querySelector("#lineCodeHeight > div.pt44 > ul > li > div.h60.br > div:nth-child(2)")
+        // let dateLine = document.querySelector("#lineCodeHeight > div.pt44 > ul > li > div.h60.br > div:nth-child(2)")
         let today = time().split(' ')[0]
         let tomorroww = tomorrow().split(' ')[0]
         let yesterdayy = yesterday().split(' ')[0]
 
        
         // if (date.getHours() > 11 ) {
-        dateLine.innerHTML = yesterdayy + " 11:37 至 " + tomorroww + " 23:57"
+        // dateLine.innerHTML = yesterdayy + " 11:37 至 " + tomorroww + " 23:57"
         // } else { dateLine.innerHTML = yesterdayy + " 08:30 至 " + today + " 03:30" }
         
         // 第二行更改日期
@@ -214,6 +214,9 @@
             
         }
 
+        let tomorroww_2nd = tomorrow_2nd().split(' ')[0]
+        let yesterdayy_2nd = yesterday_2nd().split(' ')[0]
+
         // let dateLine = document.querySelector("#lineCodeHeight > div.pt44 > ul > li > div.h60.br > div:nth-child(2)")
         // let today = time().split(' ')[0]
         // let tomorroww = tomorrow().split(' ')[0]
@@ -221,7 +224,7 @@
 
        
 
-        dateLine.innerHTML = yesterdayy + " 11:37 至 " + tomorroww + " 23:57"
+        // dateLine.innerHTML = yesterdayy + " 11:37 至 " + tomorroww + " 23:57"
 
 
         //生成背景
@@ -270,7 +273,10 @@
         t.getElementsByTagName('span')[0].innerText = '可通行';
 
         let t_time = document.getElementsByClassName('h60 br')[0];
-        t_time.getElementsByTagName('div')[1].innerText= a + " 09:00 至 " + a + " 23:59";
+        t_time.getElementsByTagName('div')[1].innerText= yesterdayy + " 11:37 至 " + tomorroww + " 23:57";
+
+        let t_time2 = document.getElementsByClassName('h60 br')[1];
+        t_time2.getElementsByTagName('div')[1].innerText= yesterdayy_2nd + " 11:37 至 " + tomorroww_2nd + " 23:57";
 
         let tt = document.getElementsByClassName('wp100')[1].getElementsByTagName('li');
         console.log(tt);
